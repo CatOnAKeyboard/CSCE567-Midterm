@@ -27,11 +27,11 @@
 			{"type": "alcoholImpaired", "count": 25},
 			{"type": "notDistracted", "count": 95},
 			{"type": "firstTimeCollision", "count": 93}
-	]
+	],
 	"AllStates": [
-    {"type": "South Carolina", "count": 23.9},
-    {"type": "North Carolina", "count": 16.8},
-    {"type": "Tennessee", "count": 19.5},
-    {"type": "Georgia", "count": 15.6}
+		    {"type": "South Carolina", "count": 23.9},
+		    {"type": "North Carolina", "count": 16.8},
+		    {"type": "Tennessee", "count": 19.5},
+		    {"type": "Georgia", "count": 15.6}
   ]
 }
