@@ -13,9 +13,5 @@ Bad Drivers
 * https://codepen.io/lisaofalltrades/pen/jZyzKo
 
 
-**Presentation Scheme** <br>
-1. What our project is (vasco)
-2. What the data is: where it is from, what it consists of, why we picked it(sarah)
-3. Why we picked a pie chart, how to read it (vasco)
-4. User involvement: button, hovering (sarah)
-Level 2 -- 208
+**Presentation Link** <br>
+https://youtu.be/QIWWTzZ2mGI
