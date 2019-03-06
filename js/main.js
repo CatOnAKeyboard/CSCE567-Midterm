@@ -26,10 +26,13 @@ const arc = d3.arc()
         .outerRadius(radius);
 
 function type(d) {
-        d.apples = Number(d.apples);
-        d.oranges = Number(d.oranges);
-        return d;
-    }
+    d.SouthCarolina = Number(d.SouthCarolina);
+    d.NorthCarolina = Number(d.NorthCarolina);
+    d.Tennessee = Number(d.Tennessee);
+    d.Georgia = Number(d.Georgia);
+    d.AllStates = Number(d.AllStates);
+    return d;
+}
 
 function arcTween(a) {
         const i = d3.interpolate(this._current, a);
@@ -58,5 +61,5 @@ d3.json("data.json", type).then(data => {
                 .each(function(d) { this._current = d; });
         }
 
-        update("apples");
+        update("SouthCarolina");
 });
