@@ -1,5 +1,5 @@
-const width = 540;
-const height = 540;
+const width = 1200;
+const height = 800;
 const radius = Math.min(width, height) / 2;
 
 const svg = d3.select("#chart-area")
@@ -9,8 +9,7 @@ const svg = d3.select("#chart-area")
     .append("g")
     .attr("transform", `translate(${width / 2}, ${height / 2})`);
 
-const color = d3.scaleOrdinal(["#66c2a5","#fc8d62","#8da0cb",
-    "#e78ac3","#a6d854","#ffd92f"]);
+const color = d3.scaleOrdinal(d3.schemeSet2);
 
 const pie = d3.pie()
     .value(d => d.count)
@@ -20,6 +19,8 @@ const pie = d3.pie()
 const arc = d3.arc()
     .innerRadius(0)
     .outerRadius(radius);
+
+
 
 function type(d) {
     d.SouthCarolina = Number(d.SouthCarolina);
@@ -36,6 +37,20 @@ function arcTween(a) {
     this._current = i(1);
     return (t) => arc(i(t));
 }
+
+// define tooltip
+var tooltip = d3.select('#chart-area') // select element in the DOM with id 'chart'
+    .append('div') // append a div element to the element we've selected
+    .attr('class', 'tooltip'); // add class 'tooltip' on the divs we just selected
+
+tooltip.append('div') // add divs to the tooltip defined above
+    .attr('class', 'label'); // add class 'label' on the selection
+
+tooltip.append('div') // add divs to the tooltip defined above
+    .attr('class', 'count'); // add class 'count' on the selection
+
+tooltip.append('div') // add divs to the tooltip defined above
+    .attr('class', 'percent'); // add class 'percent' on the selection
 
 d3.json("data/data.json", type).then(data => {
     d3.selectAll("input")
@@ -56,7 +71,23 @@ d3.json("data/data.json", type).then(data => {
             .attr("stroke", "white")
             .attr("stroke-width", "6px")
             .each(function(d) { this._current = d; });
-    }
 
+
+        tooltip.select('.label').html(d.data.label); // set current label
+        tooltip.select('.count').html('$' + d.data.count); // set current count
+        //tooltip.select('.percent').html(percent + '%'); // set percent calculated above
+        tooltip.style('display', 'block'); // set display
+
+path.on('mouseout', function() { // when mouse leaves div
+    tooltip.style('display', 'none'); // hide tooltip for that element
+});
+
+path.on('mousemove', function(d) { // when mouse moves
+    tooltip.style('top', (d3.event.layerY + 10) + 'px') // always 10px below the cursor
+        .style('left', (d3.event.layerX + 10) + 'px'); // always 10px to the right of the mouse
+});
+
+    }
     update("SouthCarolina");
+
 });
