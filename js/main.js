@@ -1,24 +1,33 @@
+/*
+	Vasco Madrid and Sarah Sunderman
+	CSCE 567 Project 1
+	main.js
+*/
 const width = 1200;
 const height = 800;
 const radius = Math.min(width, height) / 2;
 
+// create svg
 const svg = d3.select("#chart-area")
     .append("svg")
     .attr("width", width)
     .attr("height", height)
     .append("g")
     .attr("transform", `translate(${width / 2}, ${height / 2})`);
-
+// color scheme for chart
 const color = d3.scaleOrdinal(d3.schemeSet2);
 
+// create pie
 const pie = d3.pie()
     .value(d => d.count)
     .sort(null);
 
-
+// create arc
 const arc = d3.arc()
     .innerRadius(0)
     .outerRadius(radius);
+
+// potential tool tip implementation
 /*
 var tooltip = d3.select('#chart') // select element in the DOM with id 'chart'
   .append('div') // append a div element to the element we've selected                                    
@@ -31,7 +40,7 @@ tooltip.append('div') // add divs to the tooltip defined above
   .attr('class', 'count'); // add class 'count' on the selection                  
 */
 
-
+// make values of the correct type
 function type(d) {
     d.SouthCarolina = Number(d.SouthCarolina);
     d.NorthCarolina = Number(d.NorthCarolina);
@@ -47,10 +56,12 @@ function arcTween(a) {
     this._current = i(1);
     return (t) => arc(i(t));
 }
+// div section with hover information
 var div = d3.select("#ttip").append("div")	
     .attr("class", "tooltip")				
     .style("opacity", 0);
 
+// import data from data.json
 d3.json("data/data.json", type).then(data => {
     d3.selectAll("input")
         .on("change", update);
@@ -70,11 +81,11 @@ d3.json("data/data.json", type).then(data => {
             .attr("stroke", "white")
             .attr("stroke-width", "6px")
             .each(function(d) { this._current = d; })
-	.on("mouseover", function(d) {		
+	.on("mouseover", function(d) {// create hovering feature	
             div.transition()		
                 .duration(200)		
                 .style("opacity", .9);		
-            div	.html(function(a){
+            div	.html(function(a){ // add tool tip function with appropriate titles
 		if(d.data.type == "speeding")
 			return "Percentage Of Drivers Involved In Fatal Collisions Who Were Speeding: " + d.data.count
 		else if(d.data.type == "alcoholImpaired")
@@ -89,11 +100,11 @@ d3.json("data/data.json", type).then(data => {
                 .style("left", (d3.event.pageX) + "px")		
                 .style("top", (d3.event.pageY - 28) + "px");	
             })					
-        .on("mouseout", function(d) {		
+        .on("mouseout", function(d) { // handle when mouse is not on the chart
             div.transition()		
                 .duration(500)		
                 .style("opacity", 0);
-
+// potential tool tip functionality
 /**
         .on('mouseover', function(d) {  // when mouse enters div
 	      
