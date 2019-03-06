@@ -1,31 +1,31 @@
 {
 	
 	"SouthCarolina":[ 
-			{"totalCollisions": 23.9}, 
-			{"speeding": 38},
+			{"type": "totalCollisions", "count": 23.9}, 
+			{"type": "speeding", "count": 38},
 			{"alcoholImpaired": 41},
 			{"notDistracted": 96},
 			{"firstTimeCollision": 81} 
 	],
 	"NorthCarolina":[ 
-			{"totalCollisions": 16.8}, 
-			{"speeding": 39},
-			{"alcoholImpaired": 31},
-			{"notDistracted": 94},
-			{"firstTimeCollision": 81} 
+			{"type": "totalCollisions", "count": 16.8}, 
+			{"type": "speeding", "count": 39},
+			{"type": "alcoholImpaired", "count": 31},
+			{"type": "notDistracted", "count": 94},
+			{"type": "firstTimeCollision", "count": 81} 
 	],
 	"Tennessee":[ 
-			{"totalCollisions": 19.5}, 
-			{"speeding": 21},
-			{"alcoholImpaired": 29},
-			{"notDistracted": 82},
-			{"firstTimeCollision": 81} 
+			{"type": "totalCollisions", "count": 19.5}, 
+			{"type": "speeding", "count": 21},
+			{"type": "alcoholImpaired", "count": 29},
+			{"type": "notDistracted", "count": 82},
+			{"type": "firstTimeCollision", "count": 81} 
 	],
 	"Georgia":[ 
-			{"totalCollisions": 15.6}, 
-			{"speeding": 19},
-			{"alcoholImpaired": 25},
-			{"notDistracted": 95},
-			{"firstTimeCollision": 93}
+			{"type": "totalCollisions", "count": 15.6}, 
+			{"type": "speeding", "count": 19},
+			{"type": "alcoholImpaired", "count": 25},
+			{"type": "notDistracted", "count": 95},
+			{"type": "firstTimeCollision", "count": 93}
 	]
 }
