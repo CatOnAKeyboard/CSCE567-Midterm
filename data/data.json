@@ -1,37 +1,33 @@
 {
-	
-	"SouthCarolina":[ 
-			{"type": "totalCollisions", "count": 23.9}, 
-			{"type": "speeding", "count": 38},
-			{"type": "alcoholImpaired","count": 41},
-			{"type": "notDistracted","count": 96},
-			{"type": "firstTimeCollision","count": 81} 
-	],
-	"NorthCarolina":[ 
-			{"type": "totalCollisions", "count": 16.8}, 
-			{"type": "speeding", "count": 39},
-			{"type": "alcoholImpaired", "count": 31},
-			{"type": "notDistracted", "count": 94},
-			{"type": "firstTimeCollision", "count": 81} 
-	],
-	"Tennessee":[ 
-			{"type": "totalCollisions", "count": 19.5}, 
-			{"type": "speeding", "count": 21},
-			{"type": "alcoholImpaired", "count": 29},
-			{"type": "notDistracted", "count": 82},
-			{"type": "firstTimeCollision", "count": 81} 
-	],
-	"Georgia":[ 
-			{"type": "totalCollisions", "count": 15.6}, 
-			{"type": "speeding", "count": 19},
-			{"type": "alcoholImpaired", "count": 25},
-			{"type": "notDistracted", "count": 95},
-			{"type": "firstTimeCollision", "count": 93}
-	],
-	"AllStates": [
-		    {"type": "South Carolina", "count": 23.9},
-		    {"type": "North Carolina", "count": 16.8},
-		    {"type": "Tennessee", "count": 19.5},
-		    {"type": "Georgia", "count": 15.6}
+
+  "SouthCarolina":[
+    {"type": "speeding", "count": 38},
+    {"type": "alcoholImpaired","count": 41},
+    {"type": "notDistracted","count": 96},
+    {"type": "firstTimeCollision","count": 81}
+  ],
+  "NorthCarolina":[
+    {"type": "speeding", "count": 39},
+    {"type": "alcoholImpaired", "count": 31},
+    {"type": "notDistracted", "count": 94},
+    {"type": "firstTimeCollision", "count": 81}
+  ],
+  "Tennessee":[
+    {"type": "speeding", "count": 21},
+    {"type": "alcoholImpaired", "count": 29},
+    {"type": "notDistracted", "count": 82},
+    {"type": "firstTimeCollision", "count": 81}
+  ],
+  "Georgia":[
+    {"type": "speeding", "count": 19},
+    {"type": "alcoholImpaired", "count": 25},
+    {"type": "notDistracted", "count": 95},
+    {"type": "firstTimeCollision", "count": 93}
+  ],
+  "AllStates": [
+    {"type": "South Carolina", "count": 23.9},
+    {"type": "North Carolina", "count": 16.8},
+    {"type": "Tennessee", "count": 19.5},
+    {"type": "Georgia", "count": 15.6}
   ]
 }
